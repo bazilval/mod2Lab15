@@ -1,0 +1,376 @@
+﻿<Window x:Class="mod2Lab15.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mod2Lab15"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="850">
+    <Window.Resources>
+        <Style x:Key="header1">
+            <Setter Property="TextBlock.FontSize" Value="20"/>
+            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+            <Setter Property="TextBlock.FontWeight" Value="UltraBold"/>
+            <Setter Property="TextBlock.Background" Value="DimGray"/>
+            <Setter Property="TextBlock.Foreground" Value="White"/>
+            <Setter Property="TextBlock.Padding" Value="10"/>
+        </Style>
+        <Style x:Key="header2">
+            <Setter Property="TextBlock.FontSize" Value="18"/>
+            <Setter Property="TextBlock.TextAlignment" Value="Left"/>
+            <Setter Property="TextBlock.FontWeight" Value="Bold"/>
+        </Style>
+        <Style x:Key="lead">
+            <Setter Property="TextBlock.FontSize" Value="16"/>
+            <Setter Property="TextBlock.TextAlignment" Value="Left"/>
+            <Setter Property="TextBlock.FontStyle" Value="Italic"/>
+            <Setter Property="TextBlock.Padding" Value="10,0,0,0"/>
+        </Style>
+        <Style x:Key="text">
+            <Setter Property="TextBlock.FontSize" Value="14"/>
+            <Setter Property="TextBlock.TextAlignment" Value="Justify"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <FlowDocumentScrollViewer>
+            <FlowDocument>
+                <Paragraph Style="{StaticResource header1}">
+                    Как учить .NET:
+                    <LineBreak/> подробная инструкция для новичков и пару советов для опытных
+                </Paragraph>
+
+                <Section BorderBrush="Gray" BorderThickness="1">
+                    <Paragraph Style="{StaticResource lead}">
+                        <Floater Width="80">
+                            <BlockUIContainer>
+                                <Image Source="Data/net.png"/>
+                            </BlockUIContainer>
+                        </Floater>
+                        
+                        Всем привет. Меня зовут <Bold>Влад</Bold> . Я старший .NET разработчик в компании
+                        <Hyperlink NavigateUri="https://dataart.team/ru/"> DataArt</Hyperlink>. 
+                        В IT я около семи лет, из них больше пяти работаю c .NET.
+                         Хочу дать некоторые советы тем, кто только начинает свой путь в IT 
+                        как разработчик, а также тем, кто уже имеет пару лет опыта. 
+                        Надеюсь, мое видение кому-то поможет на пути.
+
+                    </Paragraph>
+                </Section>
+                <Paragraph Style="{StaticResource text}">
+                        На написание этой статьи меня вдохновили несовершенные 
+                        программы обучения многих курсов, а также несостоятельные, 
+                        общие или слишком избыточные советы экспертов для новичков.
+                        <LineBreak/>
+                        Речь пойдет о том, как, по-моему мнению, правильнее развиваться 
+                        начинающим специалистам в мире разработки в целом и некоторые советы 
+                        по развитию в мире .NET и прилегающих к нему технологий.
+                        <LineBreak/>
+                        Добавлю оговорку: есть разные уровни новичков — интерны и джуниоры. 
+                        Интерны — это те, кто не имеют опыта вовсе, обладают только теоретическими знаниями. 
+                        Джуниоры — те, кто уже где-то недолго работали.
+                </Paragraph>
+                <Paragraph Style="{StaticResource header2}">
+                    Что хотят от джуниора
+                </Paragraph>
+                <Paragraph Style="{StaticResource text}">
+                    В основном работодатель, нанимая начинающего специалиста, желает получить недооцененный актив. 
+                    То есть изначально человека берут для развития, чтобы инвестиции работодателя окупились, 
+                    и через какое-то время джуниор выполнял ту же работу так же качественно, как и специалист, 
+                    который стоит на рынке дороже и имеет больше опыта.
+                    <LineBreak/>
+                    <LineBreak/>
+                    Как ни странно, для начинающего гораздо важнее то, что называют soft skills, и знание английского языка. 
+                    Но стоит учитывать, что есть вещи, которые можно исправить и которым можно научить, а есть те, которым нельзя. 
+                    Например, если человек не говорит по-английски, но понимает базовый словарь и грамматику — 
+                    то научить его разговорному языку — это рискованная затея. Но если джуниор уже немного разговаривает, 
+                    то натаскать его за полгода вполне реально.
+                    <LineBreak/>
+                    <LineBreak/>
+                    Если человек способен расслабленно вести беседу и проявляет, что называется, аналитические способности, 
+                    не впадает в ступор от сложностей — это тоже можно отнести в разряд soft skills. 
+                    Важно то, насколько человек способен доводить работу до результата, а умение общаться, 
+                    правильно задавать вопросы и давать ответы — очень эффективный для этого инструмент.
+                    <LineBreak/>
+                    <LineBreak/>
+                    Кстати, <Bold> способность обучаться</Bold> — тоже немаловажный фактор. Лучше взять специалиста, уже способного к самообучению, 
+                    чем прививать это. Показателем могут быть, например, домашние поделки на GitHub или даже проекты в продакшене.
+                    <LineBreak/>
+                    <LineBreak/>
+                    Ходит шутка (похожая на правду), что пройти собеседование на джуниора/интерна гораздо сложнее, чем на сеньора :) 
+                    Так оно и есть. Опытный специалист имеет портфолио/резюме — это уже говорит о том, что он способен приносить результат. 
+                    Но если человек раньше не работал или работал мало — рекрутеру необходимо только за одно собеседование и, возможно, 
+                    тестовое задание выяснить все о кандидате.
+                    <LineBreak/>
+                    <LineBreak/>
+                    Но даже если человек хорошо показал себя на собеседовании, это еще не повод расслабляться — 
+                    компания будет следить за тенденциями развития, чтобы вовремя выяснить, оправдывает ли джуниор инвестиции денег 
+                    и времени в него или нет.
+                </Paragraph>
+                <Paragraph Style="{StaticResource header2}">
+                    Где выгодны джуниоры
+                </Paragraph>
+                <Paragraph Style="{StaticResource text}">
+                    Существует целый ряд задач (несложный баг-фиксинг, правки верстки и UI, написание юнит-тестов), 
+                    с которыми человек с небольшим количеством знаний и опыта справится за то же время, что и человек более опытный. 
+                    Взять, к примеру, промышленную (enterprise) разработку, крупные проекты, где кучу времени уходит на рутину, 
+                    вроде обновления проекта до актуальной версии, мердж, тестирование. Это жирный плюс в найме начинающих специалистов.
+                    <LineBreak/>
+                    <LineBreak/>
+                    Если взять аутсорсинг и аутстаффинг (то есть перепродажу человеко-часов) в той или иной форме, то рейты, 
+                    по которым продают джуниоров, не намного ниже рейтов миддл-разработчиков. А ЗП начинающих может быть значительно ниже, 
+                    что делает их привлекательным активом компании, приносящим даже более высокую маржу, нежели более опытные разработчики. 
+                    Опытных еще и найти гораздо сложнее — нужно платить агентствам или рекрутерам вплоть до одной зарплаты такого человека, 
+                    чтобы осуществить найм. А маржа при заработке на высококлассных специалистах — низкая, они больше нужны для поддержания 
+                    бизнеса в рабочем состоянии.
+                </Paragraph>
+                <Paragraph Style="{StaticResource header2}">
+                    Первые шаги
+                </Paragraph>
+                <Paragraph Style="{StaticResource text}">
+                    Если вы вообще не из IT, у вас нет друзей-разработчиков, нет профильного образования, и вы совершенно ничего не понимаете — 
+                    можно начать с каких-нибудь курсов. Боюсь, что оставлю сейчас без куска хлеба владельцев инфобизнесов, 
+                    но в интернете можно найти достаточно бесплатных материалов, например, на торрентах. Но, естественно, я не рекомендую вам скачивать пиратский контент :)
+                    <LineBreak/>
+                    <LineBreak/>
+                    Если с живым человеком-лектором вам проще, то советую курсы с большой длительностью, например от 3 до 6 месяцев. 
+                    Мне кажется, это либо втянет вас в процесс, либо окончательно вам надоест, и вы поймете, что это не ваше.
+                    <LineBreak/>
+                    <LineBreak/>
+                    Курсы не помогут вам найти работу и не помогут получить все необходимые знания для трудоустройства. 
+                    Но если вы заплатите деньги, это дисциплинирует вас. Также курсы дают первую понятийную базу, от которой можно дальше отталкиваться, 
+                    общее понимание предмета и что немаловажно — знакомства.
+                    <LineBreak/>
+                    <LineBreak/>
+                    Но лучше всего иметь товарища из IT, который сможет проверить на адекватность курсы, куда вы хотите пойти, чтобы не вышло, что это 
+                    банальное вытягивание денег, и вы получили хоть какую-то пользу.
+                    <LineBreak/>
+                    <LineBreak/>
+                    Для людей, которые уже когда-то что-то кодили в универе или школе, имеют какое-то представление об IT-сфере, курсы — скорее всего,
+                    лишняя трата денег. Достаточно посмотреть их программу и далее самому искать нужные материалы.
+                    <LineBreak/>
+                    <LineBreak/>
+                    Замечу, что любое обучение должно сопровождаться практикой. Будь то самообучение или курсы, вы должны показывать результат. 
+                    Это может быть макет, если вы учите верстку, веб-приложение или мобильное — не важно. Главное, все, что вы узнаете теоретически, сразу же примените на практике.
+                    <LineBreak/>
+                    <LineBreak/>
+                    Далее я распишу свое видение, с чего лучше начинать и как двигаться дальше в мире .NET разработки.Далее я распишу свое видение, с чего лучше начинать 
+                    и как двигаться дальше в мире .NET разработки.
+                </Paragraph>
+                <Paragraph Style="{StaticResource header2}">
+                    Hard Skills
+                </Paragraph>
+                <Paragraph Style="{StaticResource text}">
+                    Я разделю все сферы знаний hard skills на такие части:
+                </Paragraph>
+                <Table CellSpacing="10" BorderThickness="1" BorderBrush="Gray" >
+                    <Table.Columns>
+                        <TableColumn Width="40*"/>
+                        <TableColumn/>
+                    </Table.Columns>
+                    <TableRowGroup>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph TextAlignment="Center" Style="{StaticResource header2}">
+                                    C#
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    синтаксис — это база. Нанимаясь на первую работу, вы должны знать хорошо хотя-бы это.
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph TextAlignment="Center" Style="{StaticResource header2}">
+                                    LINQ
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    расширение C#, фактически его очень важная часть. Сейчас большая часть бизнес-логики пишется именно на нем.
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph TextAlignment="Center" Style="{StaticResource header2}">
+                                    .NET
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    платформа, на которой работает все выше описанное. Понимание базовых вещей убережет вас от часов поиска в Гугле и непонятного для вас поведения проекта, если вы что-то сделали не так.
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph TextAlignment="Center" Style="{StaticResource header2}">
+                                    Фреймворки
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    средства поверх C#, с использованием которых и ведется разработка. Для web — это MVC/WebForms/WebAPI/SignalR, для десктоп — WPF/WinForms. Для веба главное — понимать MVC. WebForms используется реже. Можно также добавить ASP.NET Core и Store App, однако проектов по ним не так много, так что начинать учить MVC — беспроигрышный вариант. Cамый популярный фреймворк для работы с данными — Entity Framework. Де-факто стандарт. Также нужно уметь работать хотя бы с одним IoC-контейнером, например Ninject, понимать, как и зачем работает Dependency Injection и почему слабо связанное приложение лучше поддерживается.
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph TextAlignment="Center" Style="{StaticResource header2}">
+                                    SQL
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    очень часто требуется. Знание SQL — для вас огромный плюс. С .NET приложениями чаще всего используют MS SQL Server и язык запросов T-SQL.
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph TextAlignment="Center" Style="{StaticResource header2}">
+                                    Шаблоны проектирования и парадигмы
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    даже если вы их не понимаете — то заучите. С практикой придет понимание. Шаблон сам по себе — наилучшее, найденное в ходе эволюции миллионов человеко-часов решение какой-то общей проблемы.
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph TextAlignment="Center" Style="{StaticResource header2}">
+                                    Архитектурные гайды
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    лезть в вопросы проектирования поначалу глубоко не стоит. Но понимание, что такое SOA, N-layer, Microservices, поможет вам гораздо быстрее въезжать в суть дела.
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph TextAlignment="Center" Style="{StaticResource header2}">
+                                    Базовое понимание Front-end
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    очень часто от бекенд-девелоперов требуют минимальные знания фронта. Возможно, достаточно JQuery, который используется в достаточном количестве проектов, заходящих в наши аутсорс-компании. Если вы человек с чистым бекенд-профилем, то, может быть, будете более интересны продуктовым компаниям, где множество людей делают большие технологические продукты, но, по-моему мнению, попасть в такую компанию новичку сложнее, нежели в аутсорс.
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph TextAlignment="Center" Style="{StaticResource header2}">
+                                    Productivity tools
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    очень полезно приучать себя работать быстро с самого начала. Потом productivity tools сэкономят вам сотни часов времени, воспринимайте это как инвестицию.
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph TextAlignment="Center" Style="{StaticResource header2}">
+                                    Системы контроля версий
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    средства для организации командной работы. Фрилансерам, которые работают над проектами самостоятельно, они могут быть и не нужны, но в компаниях всегда коллективная работа — там без них никак.
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        
+                    </TableRowGroup>
+                </Table>
+                <Paragraph Style="{StaticResource text}">
+                    Для разработчиков разных уровней требуется разная степень погружения в эти направления. Давайте посмотрим, с чего начать.
+                </Paragraph>
+                <Paragraph Style="{StaticResource header2}">
+                    Литература для интернов/джуниоров
+                </Paragraph>
+                <List>
+                    <ListItem>
+                        <Paragraph Style="{StaticResource text}">
+                            <Bold>
+                                <Hyperlink NavigateUri="https://www.amazon.com/4-0-Complete-Reference-Herbert-Schildt/dp/007174116X">«C# 4.0 The Complete Reference»</Hyperlink> by Herbert Schildt</Bold>
+                            <LineBreak/>
+                            Хорошо подойдет для освоения базового синтаксиса самого языка. Лично мне никогда не нравились книги Троелсена, которые рекомендуют новичкам. По моим субъективным ощущениям, там много воды, а вот у Шилдте как раз все по делу и с примерами.
+                            <LineBreak/>
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph Style="{StaticResource text}">
+                            <Bold>
+                                <Hyperlink NavigateUri="https://www.amazon.com/Pro-LINQ-Language-Integrated-Experts/dp/1430226536">«Pro LINQ: Language Integrated Query in C# 2010»</Hyperlink> by Joseph Rattz, Adam Freeman
+                            </Bold>
+                            <LineBreak/>
+                            Книжка дает исчерпывающие понимание средств LINQ в достаточном объеме для уверенной работы с ним, а с LINQ придется работать много. По сути, это огромная часть языка C#, на которой пишется немало логики. Я сам очень люблю использовать LINQ, где только смогу. Писать бизнес-логику (логику программы) в функциональном стиле (используя описательный формат преобразования данных, а не последовательный) куда лаконичнее и понятнее, как по мне. В общем в книге достаточно глубоко показаны все тонкости, рекомендую, не смотря на ее возраст. В LINQ мало что поменялось.
+                            <LineBreak/>
+                        </Paragraph>
+                    </ListItem>
+                    
+                    <ListItem>
+                        <Paragraph Style="{StaticResource text}">
+                            <Bold>
+                                <Hyperlink NavigateUri="https://www.amazon.com/CLR-via-4th-Developer-Reference/dp/0735667454">«CLR via C#»</Hyperlink> by Jeffrey Richter
+                            </Bold>
+                            <LineBreak/>
+                            Классика жанра. Совсем новичкам ее можно пропустить и сконцентрироваться на более практичной литературе по фреймворкам, но каждый .NET разработчик обязан ее прочитать. Книга дает базовое понимание, как устроена платформа .NET, как работают синтаксические средства.
+                            <LineBreak/>
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph Style="{StaticResource text}">
+                            <Bold>
+                                <Hyperlink NavigateUri="https://www.amazon.com/T-SQL-Fundamentals-3rd-Itzik-Ben-Gan/dp/150930200X">«T-SQL Fundamentals»</Hyperlink> by Itzik Ben-Gan
+                            </Bold>
+                            <LineBreak/>
+                            Пожалуй, самая лучшая книга по T-SQL, которую я видел для начинающих. Информация дается последовательно, детально и системно, однако в книге того издания, которое читал я, не было главы об индексах. Советую найти отдельно и изучить.
+                            <LineBreak/>
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph Style="{StaticResource text}">
+                            <Bold>
+                                <Hyperlink NavigateUri="https://www.yakaboo.ua/asp-net-mvc-5-s-primerami-na-c-5-0-dlja-professionalov-1372202.html">«ASP.NET MVC 5»</Hyperlink> Адама Фримена
+                            </Bold>
+                            <LineBreak/>
+                            Для веб-разработки рекомендую эту книгу. В ней неплохо разобраны базовые возможности ASP.NET MVC, контейнеры управления зависимостями (IoC), основы LINQ, AJAX, JQuery. Есть примеры с кодом, достаточно легко читается.
+                            <LineBreak/>
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph Style="{StaticResource text}">
+                            <Bold>
+                                <Hyperlink NavigateUri="https://www.ozon.ru/context/detail/id/31789305/">«Паттерны проектирования на платформе .NET»</Hyperlink> Сергея Теплякова
+                            </Bold>
+                            <LineBreak/>
+                            Русскоязычная книга по шаблонам проектирования, достаточно толковая, с примерами.
+                            <LineBreak/>
+                            Парадокс шаблонов проектирования в том, что их знание чаще всего требуется от новичков, а сами шаблоны — это концентрация опыта тысяч разработчиков, и действительно научиться их применять можно только с годами. Поэтому для начала рекомендуется просто заучить формальные определения и схемы. Со временем это формирует стиль мышления, и вы будете применять шаблоны повсеместно. Самое плохое — применять шаблоны ради шаблонов, это называется over-engineering.
+                            <LineBreak/>
+                            Также советую ознакомиться с парадигмами SOLID, главная из которых, я считаю «S» — single responsibility principle. Все остальное уже производное от нее.
+                            <LineBreak/>
+                        </Paragraph>
+                    </ListItem>
+                </List>
+                <Paragraph Style="{StaticResource text}" TextAlignment="Center">
+                    <LineBreak/>
+                    Полную версию статьи читай по
+                    <Hyperlink NavigateUri="https://dou.ua/lenta/articles/net-for-beginners/">ссылке</Hyperlink>.
+                </Paragraph>
+
+
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+    </Grid>
+</Window>
